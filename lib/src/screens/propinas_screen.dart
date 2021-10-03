@@ -47,6 +47,23 @@ class _PropinasScreenState extends State<PropinasScreen> {
                     );
                   });
             }
+            numberCon.text.trim();
+            if (numberCon.text.length < 2) {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      content: Text(
+                        'Favor de insertar un número de dos dígitos o mayor!',
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      ),
+                      backgroundColor: Colors.redAccent,
+                    );
+                  });
+            }
             var price = int.parse(numberCon.text);
             if (price < 0) {
               showDialog(
@@ -65,6 +82,7 @@ class _PropinasScreenState extends State<PropinasScreen> {
                   });
             } else {
               var tip = price * 0.2;
+              tip.round();
               var total = price + tip;
               total.toString();
               showDialog(
@@ -72,7 +90,7 @@ class _PropinasScreenState extends State<PropinasScreen> {
                   builder: (BuildContext context) {
                     return AlertDialog(
                       content: Text(
-                        'El monto total a pagar, incluida la propina, es de: \n\$$total MX',
+                        'El monto total a pagar, incluida la propina de: \$${tip.toStringAsFixed(2)} MX, es de: \n\$$total MX',
                         style: const TextStyle(color: Colors.black54),
                       ),
                       shape: RoundedRectangleBorder(

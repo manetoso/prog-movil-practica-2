@@ -50,6 +50,26 @@ class DashBoardScreen extends StatelessWidget {
                 Navigator.pushNamed(context, '/intenciones');
               },
             ),
+            ListTile(
+              title: Text('Notas'),
+              subtitle: Text('CRUD Notas'),
+              leading: Icon(Icons.note),
+              trailing: Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/notas');
+              },
+            ),
+            ListTile(
+              title: Text('Perfil'),
+              subtitle: Text('Información de cuenta'),
+              leading: Icon(Icons.person),
+              trailing: Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/profile-info');
+              },
+            ),
           ],
         ),
       ),
