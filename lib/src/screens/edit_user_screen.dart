@@ -114,9 +114,14 @@ class _EditUserScreenState extends State<EditUserScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  FloatingActionButton(
+                  MaterialButton(
                       child: Icon(Icons.save),
-                      backgroundColor: Colors.black,
+                      color: Colors.black,
+                      textColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      // backgroundColor: Colors.black,
                       onPressed: () {
                         AccountModel account = AccountModel(
                             id: 1,
@@ -138,16 +143,26 @@ class _EditUserScreenState extends State<EditUserScreen> {
                           }
                         });
                       }),
-                  FloatingActionButton(
+                  MaterialButton(
                     child: Icon(Icons.camera),
-                    backgroundColor: Colors.black,
+                    color: Colors.black,
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    // backgroundColor: Colors.black,
                     onPressed: () {
                       pickImage(ImageSource.camera);
                     },
                   ),
-                  FloatingActionButton(
+                  MaterialButton(
                     child: Icon(Icons.image),
-                    backgroundColor: Colors.black,
+                    color: Colors.black,
+                    textColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    // backgroundColor: Colors.black,
                     onPressed: () {
                       pickImage(ImageSource.gallery);
                     },

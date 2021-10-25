@@ -15,10 +15,10 @@ class DashBoardScreen extends StatelessWidget {
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://scontent.fcyw5-1.fna.fbcdn.net/v/t1.6435-9/90541481_2914995071872840_3892141879516463104_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeEb5bz2E4lxhHjr3GRLT7FSBVkxtC9n--oFWTG0L2f76lIe5VeqvuW__yrnBDIaQM4Ib0KXexaXpLZEwPW9jOuW&_nc_ohc=-ytztjRxbvwAX_OODD5&tn=rrn1cXSixqKUZQFY&_nc_ht=scontent.fcyw5-1.fna&oh=3f7706730ce01bb9feec5197e34fbf65&oe=61618A06'),
-              ),
+              // currentAccountPicture: CircleAvatar(
+              //   backgroundImage: NetworkImage(
+              //       'https://scontent.fcyw5-1.fna.fbcdn.net/v/t1.6435-9/90541481_2914995071872840_3892141879516463104_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeEb5bz2E4lxhHjr3GRLT7FSBVkxtC9n--oFWTG0L2f76lIe5VeqvuW__yrnBDIaQM4Ib0KXexaXpLZEwPW9jOuW&_nc_ohc=-ytztjRxbvwAX_OODD5&tn=rrn1cXSixqKUZQFY&_nc_ht=scontent.fcyw5-1.fna&oh=3f7706730ce01bb9feec5197e34fbf65&oe=61618A06'),
+              // ),
               accountName: Text('Emmanuel'),
               accountEmail: Text('manetoso@hotmail.com'),
               decoration: BoxDecoration(color: ColorSettings.colorPrimary),
@@ -68,6 +68,16 @@ class DashBoardScreen extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, '/profile-info');
+              },
+            ),
+            ListTile(
+              title: Text('Películas'),
+              subtitle: Text('Prueba API-REST'),
+              leading: Icon(Icons.movie),
+              trailing: Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/movie-popular');
               },
             ),
           ],
